@@ -1,0 +1,355 @@
+/* =========================================
+   COLOR PALETTE & DESIGN TOKENS
+   ========================================= */
+:root {
+  --kettle-black: #141214;
+  --tap-shoe: #302F33;
+  --asphalt-blue: #464C55;
+  --ashen-whisper: #636D79;
+  --sea-lion: #7F8995;
+  --great-falls: #9EA7B3;
+  --cemetery-ash: #C2C7CF;
+
+  --bg-main: var(--kettle-black);
+  --bg-surface: var(--tap-shoe);
+  --bg-elevated: var(--asphalt-blue);
+  --border-color: var(--asphalt-blue);
+  --text-primary: var(--cemetery-ash);
+  --text-secondary: var(--great-falls);
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --container-width: 1120px;
+}
+
+/* =========================================
+   GLOBAL RESET
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex: 1;
+}
+
+svg {
+  display: block;
+}
+
+code {
+  background-color: var(--kettle-black);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+/* =========================================
+   MINIMALIST LOGIN PAGE STYLING
+   ========================================= */
+body.minimal-body {
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 380px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.login-wrapper .form-box {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.login-wrapper .form-box h1 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.login-wrapper .form-group {
+  margin-bottom: 1.1rem;
+}
+
+.login-wrapper .form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.login-wrapper .form-group input {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  background-color: var(--kettle-black);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.login-wrapper .form-group input:focus {
+  outline: none;
+  border-color: var(--sea-lion);
+}
+
+.login-wrapper .btn {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease;
+  font-family: inherit;
+  margin-top: 0.5rem;
+}
+
+.login-wrapper .btn-primary {
+  background-color: var(--text-primary);
+  color: var(--kettle-black);
+}
+
+.login-wrapper .btn-primary:hover {
+  background-color: var(--text-secondary);
+}
+
+.alert-error {
+  background-color: var(--kettle-black);
+  border: 1px solid var(--sea-lion);
+  color: var(--text-primary);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  margin-bottom: 1.1rem;
+}
+
+/* =========================================
+   PREMIUM DASHBOARD STYLING
+   ========================================= */
+.site-header {
+  background-color: rgba(20, 18, 20, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.brand-logo svg {
+  color: var(--sea-lion);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.user-profile-badge strong {
+  color: var(--text-primary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+.dashboard-main {
+  padding: 3.5rem 0;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.welcome-hero {
+  background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(20, 18, 20, 0.8) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-content h1 {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.welcome-content p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.premium-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ashen-whisper);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.card-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.premium-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.premium-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.site-footer {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.site-footer p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--bg-main);
+}
+
+.btn-primary:hover {
+  background-color: var(--text-secondary);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--ashen-whisper);
+}
